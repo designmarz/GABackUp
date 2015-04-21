@@ -1,0 +1,15 @@
+<%= erb :'partials/_header' %>
+<h1>Authors List</h1>
+<% @authors.each do |author| %>
+  <h2><%= author["name"] %></h2>
+  <p>
+    <a href="/authors/<%= author["id"] %>"> Show More Info</a>
+  </p>
+  <p>
+    <a href="/authors/<%= author["id"] %>/edit"> Edit Info</a>
+  </p>
+  <% end %>
+
+  <button><a href="/authors/new">Add New</a></button>
+  
+<%= erb :'partials/_footer' %>

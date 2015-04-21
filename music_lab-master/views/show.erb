@@ -1,0 +1,15 @@
+<%= erb :'partials/_header' %>
+<h2> <a href="/artists/<%= @artist.id %>/edit" class="artistLink" id="artistLink"><%= @artist.name %> </a></h2>
+<br><div class="artButton">
+<a href="/artists/<%= @artist.id %>/edit"><button id="addArtist">
+  Edit Artist</button>  </a>
+  <form action="/artists/<%=@artist[:id]%>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <!-- <button id="addArtist"> -->
+    <input type="submit" value="Delete" id="artistButtonD"> 
+    <!-- </button> -->
+  </form>
+  <br><br>
+  </div>
+  <a href="/artists"><button id="addArtist">Back to all artists</button> </a>
+<%= erb :'partials/_footer' %>

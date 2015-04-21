@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Students</title>
+</head>
+<body>
+	
+<h1>Hello!</h1>
+
+<div class="formHolder">
+<form action="/create" method="post">
+	<p>
+		<label for="student">Add Student:</label> <br>
+		<input type="text" name="student" id="student" autofocus required>
+		<input type="submit" value="Add a Student">
+	</p>
+</form>
+</div>
+
+<div class="studentList">
+	<% students.forEach(function(student) { %>
+		<p>
+<form action="/remove/<%= student %>?_method=DELETE" method="post">
+			<%= student %> 
+			<input type="submit" value="X">
+				<form action="/edit">
+				<input type="submit" value="edit">	
+				</form>
+</form>
+		</p>
+	<% }); %>
+
+	<p>
+		<form action="/remove/?_method=DELETE" method="post">
+		<input type="submit" value="Delete all Students?">
+		</form>
+	</p>
+</div>
+
+</body>
+</html>

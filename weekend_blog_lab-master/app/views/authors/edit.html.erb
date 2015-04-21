@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <% if @author.errors.any? %>
+  <% @author.errors.full_messages.each do |error| %>
+      <p class="text-danger">
+      <%= error %>
+      </p>
+    <% end %>
+  <% end %>
+  <br>
+    <h2>Add Author:</h2>
+<%= simple_form_for(@author, :html => { :class => "form-inline" }) do |f|%>
+    <div class="row">
+     <div class="col-md-2">
+       <%= f.input :first_name, error_html: { id: 'error'} %>
+     </div>
+     <div class = "col-md-1"></div>
+      <div class="col-md-2">
+       <%= f.input :last_name, error_html: { id: 'error'} %>
+     </div>
+     <div class = "col-md-1"></div>
+     <div class="col-md-2">
+       <%= f.input :age, error_html: { id: 'error'} %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.submit "Edit Author", class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+</div>

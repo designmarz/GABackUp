@@ -1,0 +1,12 @@
+body{
+  background: rgb(238,238,238,.8);
+  font-family: sans-serif;
+}
+
+a {
+text-decoration: none;
+}
+
+input[type="submit"] {
+display: block;
+}

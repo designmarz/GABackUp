@@ -1,0 +1,7 @@
+ <%= erb :'partials/_header' %>
+ <form action="/artists/<%=@artist[:id]%>" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  <input type="text" name="artist_name" value="<%=@artist[:name]%>" autofocus>
+  <input type="submit" value="Save">
+</form>
+<%= erb :'partials/_footer' %>

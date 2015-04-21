@@ -1,0 +1,19 @@
+table.colorTable {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	border: 1px solid #777;
+	text-align: center;
+	width: 80%;
+}
+
+table {
+	border-spacing: 0px;
+}
+
+.inputs {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	text-align: center;
+}

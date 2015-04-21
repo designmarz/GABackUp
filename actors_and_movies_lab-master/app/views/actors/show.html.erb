@@ -1,0 +1,81 @@
+<<<<<<< HEAD
+<h1>Actors#show</h1>
+<h1><%= @actor.name %></h1>
+
+<table style="width:175px">
+    <tr>
+      <th>Movies</th>
+      <th> </th>
+    </tr>
+    <% @actor.movies.each do |flick| %>
+  <tr>
+    <td>
+  <%= link_to "#{flick.title} (#{flick.year})", movie_path(flick) %></td>
+    <td><%= button_to "X", remove_movie_path(actor, flick), :method => :delete %></td>
+    <%end %>
+  </table>
+=======
+<h1><%= @actor.name %></h1>
+
+<div class="black-box">
+  <h2>Movies</h2>
+  <ul>
+    <% @actor.movies.each do |role| %>
+    <li>
+      <%= link_to "#{role.title} (#{role.year})", movie_path(role) %>
+      <%= button_to "X", remove_movie_path(@actor, role), :method => :delete %>
+    </li>
+    <% end %>
+  </ul>
+  <% unless @movies.empty? %>
+    <%= form_tag add_movie_path do |f|%>
+      <%= collection_select :movie, :id, @movies, :id, :title %>
+      <%= submit_tag "Add" %>
+    <% end %>
+  <% end %>
+</div>
+
+>>>>>>> b6f563e4e6ddbbc2addd3b2b5d4ed2beb35a8b05
+<%= link_to "Edit", edit_actor_path(@actor) %>
+<%= button_to "Delete", actor_path(@actor), :method => :delete %>
+<br><br>
+
+<<<<<<< HEAD
+<div class="commentBox">
+  <h1>Comments</h1>
+  
+  <% @comments.each do |comment| %>
+  <div class="comment">
+    <h4><%= simple_format comment.content %></h4> <p><%= comment.created_at %></p>
+  </div>
+  <% end %>
+</div>
+
+<i><h4>New Comment</h4></i>
+  <%= form_for [@commentable, @comment] do |f| %>
+    <% if @comment.errors.any? %>
+      <div class="error">
+          <h2>Please correct the following errors</h2>
+      <ul>
+          <% @comment.errors.full_message.each do |msg| %>
+              <li> <%= msg %> </li>
+          <% end %>
+      </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= f.text_area :content, rows: 8 %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+<br><br>
+=======
+<<<<<<< HEAD
+<%= link_to "Back to actors", actors_path %>
+=======
+>>>>>>> master
+<%= link_to "Back to actors", actors_path %>
+>>>>>>> b6f563e4e6ddbbc2addd3b2b5d4ed2beb35a8b05

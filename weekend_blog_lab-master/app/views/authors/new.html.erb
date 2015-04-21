@@ -1,0 +1,24 @@
+<div class="container-fluid">
+
+<%= simple_form_for(@author, :html => { :class => "form-inline autofocus"}) do |f|%>
+<div class = row>
+<div class="col-md-2 col-md-offset-2">
+  <%= f.input :first_name, error_html: { id: 'error'}%>
+</div>
+<div class = "col-md-1"></div>
+  <div class="col-md-2">
+  <%= f.input :last_name, error_html: { id: 'error'} %>
+  </div>
+  <div class = "col-md-1"></div>
+ <div class="col-md-2">
+  <%= f.input :age, error_html: { id: 'error'} %>
+  </div>
+  </div>
+  <br>
+  <div class ="row">
+  <div class ="col-md-3 col-md-offset-5">
+  <%= f.submit "Add Author", class: 'btn btn-primary' %>
+  </div>
+  </div>
+  <% end %>
+</div>

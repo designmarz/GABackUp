@@ -1,0 +1,15 @@
+<div class="form" style="margin-left:auto; margin-right:auto; text-align:center; width:300px;">
+  <h2>Search for a movie!</h2>
+    <%= simple_form_for [@movies, Movie.new] do |f| %>
+      <%= f.input :title, label: false, placeholder: 'Movie Title' %> <br>
+      <%= f.button :submit, 'Search OMDB' %>
+    <% end %>
+
+  <% if @stuff %>
+    <% @stuff.each do |movie| %>
+    <!-- <ul>  -->
+      <h3><%= movie["Title"] %></h3> <p>Released: <%= movie["Year"]%></p><br>
+    <!-- </ul> -->
+    <% end %>
+  <% end %>
+</div>

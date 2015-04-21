@@ -1,0 +1,8 @@
+<h1>Movies#show</h1>
+<p>Find me in app/views/movies/show.html.erb</p>
+
+<ul>
+  <% @movies.each do |movie| %>
+   <li> <%= movie.title %> - <%= movie.date %> </li>
+  <% end %>
+</ul>

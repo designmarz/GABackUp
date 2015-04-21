@@ -1,0 +1,60 @@
+<h1><%= @movie.title %></h1>
+
+<p><%= @movie.year %></p>
+
+<div class="black-box">
+  <h2>Actors</h2>
+  <ul>
+    <% @movie.actors.each do |actor| %>
+    <li>
+      <%= link_to actor.name, actor %>
+      <%= button_to "X", remove_actor_path(@movie, actor), :method => :delete %>
+    </li>
+    <% end %>
+  </ul>
+  <% unless @actors.empty? %>
+  <%= form_tag add_actor_path(@movie) do %>
+  <%= collection_select :actor, :id, @actors, :id, :name %>
+  <%= submit_tag "Add" %>
+  <% end %>
+  <% end %>
+</div>
+
+<%= link_to "Edit", edit_movie_path(@movie) %>
+<%= button_to "Delete", movie_path(@movie), :method => :delete %>
+<br><br>
+
+<div class="commentBox">
+  <h1>Comments</h1>
+
+  <% @comments.each do |comment| %>
+  <div class="comment">
+    <h4><%= simple_format comment.content %></h4> 
+    <p><%= time_ago_in_words comment.created_at %>
+    <%= button_to "X", remove_movie_comment_path(@comments, comment), :method => :delete %></p>
+  </div>
+  <% end %>
+</div>
+
+<i><h4>Post a New Comment!</h4></i>
+  <%= form_for [@commentable, @comment] do |f| %>
+    <% if @comment.errors.any? %>
+      <div class="error">
+          <h2>Please correct the following errors</h2>
+      <ul>
+          <% @comment.errors.full_message.each do |msg| %>
+              <li> <%= msg %> </li>
+          <% end %>
+      </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= f.text_area :content, rows: 8 %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+<br><br>
+<%= link_to "Back to movies", movies_path %>

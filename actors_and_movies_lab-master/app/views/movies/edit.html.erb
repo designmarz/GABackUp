@@ -1,0 +1,9 @@
+<h1>Edit Movie Info</h1>
+
+<%= form_for @movie do |f| %>
+  <h4>Movie Title
+  <%= f.text_field :title %></h4>
+  <h4>Year Released
+  <%= f.text_field :year %></h4>
+  <%= f.submit "Update" %>
+<% end %>

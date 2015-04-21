@@ -1,0 +1,17 @@
+{
+  "name": "iterators_lab",
+  "version": "0.0.0",
+  "description": "a lab on iterators",
+  "repository": {
+    "type": "git",
+    "url": "http://https://github.com/wdi-sf-jan/iterators_lab"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter=spec test"
+  },
+  "dependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.20.1"
+  }
+}
